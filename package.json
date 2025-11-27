@@ -1,10 +1,19 @@
 {
   "name": "custom-calculator",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production",
+    "test": "jest",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix",
+    "*.{js,css,md,html,json}": "prettier --write"
   },
   "repository": {
     "type": "git",
@@ -18,10 +27,16 @@
   },
   "homepage": "https://github.com/avalenche/custom-calculator#readme",
   "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "@eslint/js": "^9.39.1",
+    "babel-loader": "^10.0.0",
     "css-loader": "^7.1.2",
     "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-jest": "^29.2.1",
     "eslint-plugin-prettier": "^5.5.4",
+    "globals": "^16.5.0",
     "html-webpack-plugin": "^5.6.4",
     "husky": "^9.1.7",
     "jest": "^30.2.0",

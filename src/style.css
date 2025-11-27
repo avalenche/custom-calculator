@@ -1,0 +1,78 @@
+body {
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.calculator {
+  width: 500px; /* Adjust as needed */
+  background-color: #4a4a4a;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.display {
+  background-color: #333;
+  color: white;
+  text-align: right;
+  font-size: 3rem;
+  padding: 20px;
+  min-height: 60px;
+  overflow-x: auto;
+}
+
+#display-text {
+  display: block;
+}
+
+.buttons {
+  display: grid;
+  /* Adjust grid columns as per the image */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+}
+
+button {
+  border: none;
+  font-size: 1.2rem;
+  padding: 20px 0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-num {
+  background-color: #777;
+  color: white;
+}
+.btn-num:hover {
+  background-color: #888;
+}
+
+.btn-op {
+  background-color: #f39c12; /* Orange */
+  color: white;
+  font-size: 1.5rem;
+}
+.btn-op:hover {
+  background-color: #f5b041;
+}
+
+.btn-dark {
+  background-color: #616161;
+  color: white;
+}
+.btn-dark:hover {
+  background-color: #717171;
+}
+
+/* Example of making a button span multiple columns */
+/* Adjust grid-template-columns to fit your final layout */
+/* For example, if '0' is wider: */
+/* 
+button[data-key='0'] {
+  grid-column: span 2;
+} */
