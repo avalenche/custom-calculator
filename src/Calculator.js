@@ -36,7 +36,6 @@ export class Calculator {
   // Sets the operation
   chooseOperation(operation) {
     if (this.currentOperand === '') return;
-    // If we already have a previous operand, compute first
     if (this.previousOperand !== '') {
       this.compute();
     }
@@ -83,7 +82,7 @@ export class Calculator {
       this.operation = undefined;
       this.previousOperand = '';
       this.updateDisplay();
-    } catch (error) {
+    } catch {
       this.currentOperand = 'Error'; // Handle division by zero
       this.updateDisplay();
       this.currentOperand = '0'; // Reset after showing error
@@ -129,7 +128,7 @@ export class Calculator {
       }
       this.currentOperand = result.toString();
       this.updateDisplay();
-    } catch (error) {
+    } catch {
       this.currentOperand = 'Error';
       this.updateDisplay();
       this.currentOperand = '0';
